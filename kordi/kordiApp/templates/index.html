@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<table>
+      <thead>
+      <th>Id</th>
+      <th>Email</th>
+
+      </thead>
+
+{% for el in data %}
+      <tr>
+          <td>{{el.id}}</td>
+          <td>{{el.email}}</td>
+
+
+      </tr>
+{%endfor%}
+ </table>
+</body>
+</html>
