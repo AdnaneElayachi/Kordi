@@ -7,8 +7,6 @@ class Adress(models.Model):
     etat = models.TextField()
     codePostal = models.TextField()
 
-    def __str__(self):
-        return self.adresse
 
 class User(models.Model):
     email = models.TextField()
@@ -22,3 +20,6 @@ class InformationUser(models.Model):
     phoneNumber = models.TextField()
     adressesMail = models.TextField()
     Other_link = models.TextField()
+    images = models.ImageField(upload_to="InformationUser/")
+
+

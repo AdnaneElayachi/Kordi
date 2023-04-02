@@ -2,8 +2,11 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import UserFrom, AdressFrom, InformationUserFrom
 from .models import User, InformationUser, Adress
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import *
 
-
+"""
 # Create your views here.
 
 def listUser(request):
@@ -120,3 +123,44 @@ def delete_informationUser(request, pk):
     adress.delete()
 
     return redirect('')
+"""
+
+
+@api_view(['GET'])
+def allUsers(request):
+    users = User.objects.all()
+    serialization = UserSerializer(users, many=True)
+    return Response(serialization.data)
+
+
+@api_view(['GET'])
+def getUser(request, id):
+    user = User.objects.get(id=id)
+    serializer = UserSerializer(user)
+    return Response(serializer.data)
+
+
+@api_view(['POST'])
+def addUsers(request):
+    serializer = UserSerializer(data=request.data, many=True)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+
+@api_view(['PUT'])
+def updateUsers(request, id):
+    user = User.objects.get(id=id)
+    serializer = UserSerializer(data=request.data, many=True)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+
+api_view(['DELET'])
+
+
+def DeletUsers(request, id):
+    user = User.objects.get(id=id)
+    user.delete()
+    return Response(" ")
