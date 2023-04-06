@@ -118,7 +118,6 @@ def create_InformationUser(request):
         form = InformationUserFrom()
     return render(request, '', {'from': form})
 
-
 def update_InformationUser(request, pk):
     informationUser = get_object_or_404(Users, pk=pk)
     if request.method == 'POST':
@@ -132,9 +131,9 @@ def update_InformationUser(request, pk):
 
 
 
-def QR_Code_informationUser(request,pk):
+def QR_Code_informationUser(request, pk):
     information_user = get_object_or_404(Users, pk=pk)
-    data = f"Name: {information_user.name}, Email: {information_user.email}"
+    data = f"{information_user.userLocalization}, {information_user.phoneNumber}, {information_user.other_link}, {information_user.images}"
     qr = qrcode.QRCode(version=1, box_size=10, border=5)
     qr.add_data(data)
     qr.make(fit=True)
