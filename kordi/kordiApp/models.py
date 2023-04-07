@@ -32,7 +32,7 @@ class InformationUser(models.Model):
     userLocalization = models.ForeignKey(Localization, on_delete=models.CASCADE)
     phoneNumber = models.TextField()
     adressesMail = models.TextField()
-    other_link = models.TextField()
+    R = models.TextField()
     images = models.ImageField(upload_to="InformationUser", blank=True , null=True)
 
     def __init__(self,userLocalization_,phoneNumber_,adressesMail_,other_link_,images_):
