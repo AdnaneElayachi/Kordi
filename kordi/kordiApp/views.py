@@ -1,8 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
-from . import forms
-
+from .forms import UserFrom, AdressFrom, InformationUserFrom
 from .serializers import *
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
@@ -10,31 +9,31 @@ import qrcode
 
 
 def listUser(request):
-
     d = Users.objects.all()
-    return render(request, 'index.html', {'data': d})
+
+    return render(request, '', {'data': d})
 
 
 def create_user(request):
     if request.method == 'Post':
-        form = forms.UserFrom(request.POST)
+        form = UserFrom(request.POST)
         if form.is_valid():
             form.save()
             return redirect('listPatients')
     else:
-        form = forms.UserFrom()
+        form = UserFrom()
     return render(request, '', {'from': form})
 
 
 def update_user(request, pk):
     user = get_object_or_404(Users, pk=pk)
     if request.method == 'POST':
-        form = forms.UserFrom(request.POST, instance=user)
+        form = UserFrom(request.POST, instance=user)
         if form.is_valid():
             form.save()
             return redirect('listUser')
     else:
-        form = forms.UserFrom(instance=user)
+        form = UserFrom(instance=user)
     return render(request, '', {'form': form, 'patient': user})
 
 
@@ -44,6 +43,7 @@ def delete_user(request, pk):
 
     return redirect('')
 
+
 ################################################
 def user_login(request):
     if request.method == 'POST':
@@ -52,7 +52,7 @@ def user_login(request):
         user = authenticate(request, emailUsers=emailUsers, passwordUsers=passwordUsers)
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect('')
         else:
 
             return render(request, '', {'error': 'Invalid credentials'})
@@ -67,36 +67,48 @@ def user_logout(request):
 
 
 ################################################
-def listAdress(request):
+def register(request):
+    if request.method == 'POST':
+        form = UserFrom(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = UserFrom()
+    return render(request, '', {'form': form})
+
+
+################################################
+def listAddress(request):
     for i in range(10):
-        a = Adress(None)
+        a = Address(None)
         a.save()
-    d = Adress.objects.all()
+    d = Address.objects.all()
     return render(request, '', {'data': d})
 
 
-def create_Adress(request):
+def create_Address(request):
     if request.method == 'Post':
-        form = forms.AdressFrom(request.POST)
+        form = AdressFrom(request.POST)
         if form.is_valid():
             form.save()
             return redirect('')
     else:
-        form = forms.AdressFrom()
+        form = AdressFrom()
     return render(request, '', {'from': form})
 
 
-def update_Adress(request, pk):
+def update_Address(request, pk):
     adress = get_object_or_404(Users, pk=pk)
     if request.method == 'POST':
-        form = forms.AdressFrom(request.POST, instance=adress)
+        form = AdressFrom(request.POST, instance=adress)
         if form.is_valid():
             form.save()
             return redirect('listAdress')
     else:
-        form = forms.AdressFrom(instance=adress)
+        form = AdressFrom(instance=adress)
     return render(request, '', {'form': form, 'adress': adress})
-
 
 
 ################################################
@@ -104,31 +116,31 @@ def listInformationUser(request):
     for i in range(10):
         info = InformationUser(None)
         info.save()
-    d = Adress.objects.all()
+    d = Address.objects.all()
     return render(request, '', {'data': d})
 
 
 def create_InformationUser(request):
     if request.method == 'Post':
-        form = forms.InformationUserFrom(request.POST)
+        form = InformationUserFrom(request.POST)
         if form.is_valid():
             form.save()
             return redirect('')
     else:
-        form = forms.InformationUserFrom()
+        form = InformationUserFrom()
     return render(request, '', {'from': form})
+
 
 def update_InformationUser(request, pk):
     informationUser = get_object_or_404(Users, pk=pk)
     if request.method == 'POST':
-        form = forms.InformationUserFrom(request.POST, instance=informationUser)
+        form = InformationUserFrom(request.POST, instance=informationUser)
         if form.is_valid():
             form.save()
             return redirect('listInformationUser')
     else:
-        form = forms.AdressFrom(instance=informationUser)
+        form = AdressFrom(instance=informationUser)
     return render(request, '', {'form': form, 'update_InformationUser': informationUser})
-
 
 
 def QR_Code_informationUser(request, pk):

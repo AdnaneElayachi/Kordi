@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class AdressSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Adress
+        model = Address
         fields = '__all__'
 
 

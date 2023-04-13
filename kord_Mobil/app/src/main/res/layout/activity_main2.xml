@@ -37,60 +37,27 @@
                 android:id="@+id/editEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="Email"
-                android:inputType="textEmailAddress"
                 android:textColor="#fff"
-
                 android:textColorHint="#fff"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="109dp"
-                tools:layout_editor_absoluteY="231dp" />
+                android:background="@drawable/input_xml"
+                android:inputType="textEmailAddress"
+                tools:layout_editor_absoluteX="111dp"
+                tools:layout_editor_absoluteY="230dp"
+                tools:ignore="MissingConstraints" />
 
             <EditText
                 android:id="@+id/editPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="84dp"
-                android:layout_marginEnd="24dp"
-                android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="Password"
-                android:textColor="#fff"
-                android:textColorHint="#fff"
                 android:inputType="textPassword"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_editor_absoluteX="109dp"
                 tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sign up"
-                android:textColor="#fff"
-
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="311dp"
-                tools:layout_editor_absoluteY="576dp" />
-
-            <Button
-                android:id="@+id/btnLogin"
-                android:layout_width="212dp"
-                android:layout_height="45dp"
-                android:text="Login"
-                android:textColor="#fff"
-                android:background="#742ECC"
-
-                app:layout_constraintEnd_toEndOf="@+id/editPassword"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="490dp" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
