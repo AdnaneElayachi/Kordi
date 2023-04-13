@@ -1,13 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
-from .forms import UserFrom, AdressFrom, InformationUserFrom
+from . import forms
 
 from .serializers import *
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 import qrcode
-# Create your views here.
+
 
 def listUser(request):
 
@@ -17,24 +17,24 @@ def listUser(request):
 
 def create_user(request):
     if request.method == 'Post':
-        form = UserFrom(request.POST)
+        form = forms.UserFrom(request.POST)
         if form.is_valid():
             form.save()
             return redirect('listPatients')
     else:
-        form = UserFrom()
+        form = forms.UserFrom()
     return render(request, '', {'from': form})
 
 
 def update_user(request, pk):
     user = get_object_or_404(Users, pk=pk)
     if request.method == 'POST':
-        form = UserFrom(request.POST, instance=user)
+        form = forms.UserFrom(request.POST, instance=user)
         if form.is_valid():
             form.save()
             return redirect('listUser')
     else:
-        form = UserFrom(instance=user)
+        form = forms.UserFrom(instance=user)
     return render(request, '', {'form': form, 'patient': user})
 
 
@@ -77,24 +77,24 @@ def listAdress(request):
 
 def create_Adress(request):
     if request.method == 'Post':
-        form = AdressFrom(request.POST)
+        form = forms.AdressFrom(request.POST)
         if form.is_valid():
             form.save()
             return redirect('')
     else:
-        form = AdressFrom()
+        form = forms.AdressFrom()
     return render(request, '', {'from': form})
 
 
 def update_Adress(request, pk):
     adress = get_object_or_404(Users, pk=pk)
     if request.method == 'POST':
-        form = AdressFrom(request.POST, instance=adress)
+        form = forms.AdressFrom(request.POST, instance=adress)
         if form.is_valid():
             form.save()
             return redirect('listAdress')
     else:
-        form = AdressFrom(instance=adress)
+        form = forms.AdressFrom(instance=adress)
     return render(request, '', {'form': form, 'adress': adress})
 
 
@@ -110,23 +110,23 @@ def listInformationUser(request):
 
 def create_InformationUser(request):
     if request.method == 'Post':
-        form = InformationUserFrom(request.POST)
+        form = forms.InformationUserFrom(request.POST)
         if form.is_valid():
             form.save()
             return redirect('')
     else:
-        form = InformationUserFrom()
+        form = forms.InformationUserFrom()
     return render(request, '', {'from': form})
 
 def update_InformationUser(request, pk):
     informationUser = get_object_or_404(Users, pk=pk)
     if request.method == 'POST':
-        form = InformationUserFrom(request.POST, instance=informationUser)
+        form = forms.InformationUserFrom(request.POST, instance=informationUser)
         if form.is_valid():
             form.save()
             return redirect('listInformationUser')
     else:
-        form = AdressFrom(instance=informationUser)
+        form = forms.AdressFrom(instance=informationUser)
     return render(request, '', {'form': form, 'update_InformationUser': informationUser})
 
 
