@@ -83,6 +83,7 @@
                 android:layout_height="45dp"
                 android:text="Login"
                 android:textColor="#fff"
+
                 android:background="#742ECC"
 
                 app:layout_constraintEnd_toEndOf="@+id/editPassword"
