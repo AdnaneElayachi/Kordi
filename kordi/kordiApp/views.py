@@ -19,7 +19,7 @@ def create_user(request):
         form = UserFrom(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('listPatients')
+            return redirect('listUser')
     else:
         form = UserFrom()
     return render(request, '', {'from': form})
@@ -34,7 +34,7 @@ def update_user(request, pk):
             return redirect('listUser')
     else:
         form = UserFrom(instance=user)
-    return render(request, '', {'form': form, 'patient': user})
+    return render(request, '', {'form': form, 'user': user})
 
 
 def delete_user(request, pk):

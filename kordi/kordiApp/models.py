@@ -16,10 +16,14 @@ class Address(models.Model):
 
 
 class Users(models.Model):
+    name=models.CharField(max_length=50)
+    lastName = models.CharField(max_length=50)
     emailUsers = models.EmailField()
-    passwordUsers = models.TextField()
+    passwordUsers = models.CharField(max_length=50)
 
-    def __init__(self, emailUsers_, passwordUsers_):
+    def __init__(self, emailUsers_, passwordUsers_,name_,lastName_):
+        self.name=name_
+        self.lastName=lastName_
         self.emailUsers = emailUsers_
         self.passwordUsers = passwordUsers_
 
