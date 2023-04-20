@@ -21,17 +21,18 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="119dp"
-                android:layout_height="56dp"
+                android:layout_width="256dp"
+                android:layout_height="50dp"
                 android:fontFamily="@font/abeezee"
-                android:text="Login"
+                android:text="Registre"
                 android:textColor="#fff"
                 android:textSize="44sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.651"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="152dp" />
+                tools:layout_editor_absoluteY="129dp" />
 
             <EditText
                 android:id="@+id/editEmail"
@@ -52,36 +53,42 @@
                 android:id="@+id/editPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="84dp"
-                android:layout_marginEnd="24dp"
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="Password"
+                android:inputType="textPassword"
                 android:textColor="#fff"
                 android:textColorHint="#fff"
-                android:inputType="textPassword"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.542"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="109dp"
+                app:layout_constraintVertical_bias="0.405"
                 tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:id="@+id/textView2"
+            <EditText
+                android:id="@+id/editConfirmPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sign up"
+                android:layout_marginTop="84dp"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
                 android:textColor="#fff"
-
+                android:textColorHint="#fff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.534"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="311dp"
-                tools:layout_editor_absoluteY="576dp" />
-
+                tools:layout_editor_absoluteX="109dp" />
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="212dp"
                 android:layout_height="45dp"
-                android:text="Login"
+                android:text="Registre"
                 android:textColor="#fff"
 
                 android:background="#742ECC"
@@ -92,8 +99,8 @@
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteY="490dp" />
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
