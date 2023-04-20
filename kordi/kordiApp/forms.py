@@ -5,11 +5,11 @@ from .models import *
 class UserForm(forms.ModelForm):
     class Meta:
         model = Users
-        fields = ['name', 'lastName', 'email', 'passwordUsers']
+        fields = ['name', 'lastName', 'emailUsers', 'passwordUsers']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'lastName': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'emailUsers': forms.TextInput(attrs={'class': 'form-control'}),
             'passwordUsers': forms.TextInput(attrs={'class': 'form-control'}),
 
         }
