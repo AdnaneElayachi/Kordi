@@ -25,12 +25,12 @@ class UserForm(forms.ModelForm):
 class AdressFrom(forms.ModelForm):
     class Meta:
         model = Address
-        fields = ['adresse', 'ville', 'etat', 'code Postal']
+        fields = ['address', 'city', 'state', 'postal_code']
         widgets = {
-            'adresse': forms.TextInput(attrs={'class': 'form-control'}),
-            'ville': forms.TextInput(attrs={'class': 'form-control'}),
-            'etat': forms.TextInput(attrs={'class': 'form-control'}),
-            'codePostal': forms.TextInput(attrs={'class': 'form-control'}),
+            'address': forms.TextInput(attrs={'class': 'form-control'}),
+            'city': forms.TextInput(attrs={'class': 'form-control'}),
+            'state': forms.TextInput(attrs={'class': 'form-control'}),
+            'postal_code': forms.TextInput(attrs={'class': 'form-control'}),
 
         }
 
@@ -39,11 +39,12 @@ class AdressFrom(forms.ModelForm):
 class InformationUserFrom(forms.ModelForm):
     class Meta:
         model = InformationUser
-        fields = ['user Localization', 'phone Number', 'adresses Email', 'Otherlink']
+        fields = ['user Localization', 'phone Number', 'adresses Email', 'Otherlink', 'images']
         widgets = {
             'userLocalization': forms.TextInput(attrs={'class': 'form-control'}),
             'phoneNumber': forms.TextInput(attrs={'class': 'form-control'}),
             'adressesEmail': forms.TextInput(attrs={'class': 'form-control'}),
             'codeOtherlink': forms.TextInput(attrs={'class': 'form-control'}),
+            'images': forms.TextInput(attrs={'class': 'form-control'}),
 
         }

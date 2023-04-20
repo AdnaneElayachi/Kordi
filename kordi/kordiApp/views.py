@@ -16,24 +16,24 @@ def listUser(request):
 
 def create_user(request):
     if request.method == 'Post':
-        form = UserFrom(request.POST)
+        form = UserForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('listUser')
     else:
-        form = UserFrom()
+        form = UserForm()
     return render(request, '', {'from': form})
 
 
 def update_user(request, pk):
     user = get_object_or_404(Users, pk=pk)
     if request.method == 'POST':
-        form = UserFrom(request.POST, instance=user)
+        form = UserForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
             return redirect('listUser')
     else:
-        form = UserFrom(instance=user)
+        form = UserForm(instance=user)
     return render(request, '', {'form': form, 'user': user})
 
 
@@ -69,13 +69,13 @@ def user_logout(request):
 ################################################
 def register(request):
     if request.method == 'POST':
-        form = UserFrom(request.POST)
+        form = UserForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
             return redirect('home')
     else:
-        form = UserFrom()
+        form = UserForm()
     return render(request, '', {'form': form})
 
 
