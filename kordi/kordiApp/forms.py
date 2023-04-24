@@ -39,12 +39,12 @@ class AdressFrom(forms.ModelForm):
 class InformationUserFrom(forms.ModelForm):
     class Meta:
         model = InformationUser
-        fields = ['user Localization', 'phone Number', 'adresses Email', 'Otherlink', 'images']
+        fields = ['userLocalization', 'phoneNumber', 'adressesEmail', 'other_link', 'images']
         widgets = {
             'userLocalization': forms.TextInput(attrs={'class': 'form-control'}),
             'phoneNumber': forms.TextInput(attrs={'class': 'form-control'}),
             'adressesEmail': forms.TextInput(attrs={'class': 'form-control'}),
-            'codeOtherlink': forms.TextInput(attrs={'class': 'form-control'}),
+            'other_link': forms.TextInput(attrs={'class': 'form-control'}),
             'images': forms.TextInput(attrs={'class': 'form-control'}),
 
         }
