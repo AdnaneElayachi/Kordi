@@ -7,11 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.kord.connexion.Connexion;
-import com.example.kord.models.Address;
+
 import com.example.kord.models.InformationUser;
 
-import com.example.kord.models.Localization;
-import com.example.kord.models.Users;
 import com.example.kord.repository.CRUD;
 
 public class InfUserImplement implements CRUD<InformationUser> {
