@@ -71,4 +71,12 @@ public class InformationUser {
     public void setUserLocalization(Localization userLocalization) {
         this.userLocalization = userLocalization;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

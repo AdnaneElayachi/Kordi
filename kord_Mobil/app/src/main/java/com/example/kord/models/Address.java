@@ -31,6 +31,8 @@ public class Address {
         this.city = city;
     }
 
+
+
     public String getrue() {
         return rue;
     }

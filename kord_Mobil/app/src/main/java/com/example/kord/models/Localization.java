@@ -3,16 +3,34 @@ package com.example.kord.models;
 public class Localization {
 
 
-     Address adress;
+    private  Address address;
+     private int id;
+     private static int count;
 
      public Localization(Address _adress){
-          this.adress=_adress;
+          this.address=_adress;
+          id=++count;
 
-     } public Address getAdress() {
-          return adress;
+     }
+     public Localization(int id,Address _adress){
+          this.address=_adress;
+          this.id =id;
+
      }
 
-     public void setAdress(Address adress) {
-          this.adress = adress;
+     public Address getAddress() {
+          return address;
+     }
+
+     public void setAddress(Address adress) {
+          this.address = adress;
+     }
+
+     public int getId() {
+          return id;
+     }
+
+     public void setId(int id) {
+          this.id = id;
      }
 }
