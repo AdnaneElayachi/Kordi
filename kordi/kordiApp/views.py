@@ -63,7 +63,7 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     # home
-    return redirect('')
+    return redirect('/')
 
 
 ################################################
