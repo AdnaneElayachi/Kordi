@@ -13,9 +13,9 @@ public class QRCode {
 
     public String generateQRCode() throws WriterException {
         String content = "User: " + Iuser.getUser().getName() + "\n"
-                + "Email: " + Iuser.getAdressesMail() + "\n"
+                + "Email: " + Iuser.getUser().getEmailUsers() + "\n"
                 + "Phone: " + Iuser.getPhoneNumber() + "\n"
-                + "Location: " + Iuser.getUserLocalization().getAdress();
+                + "Location: " + Iuser.getUserLocalization().getAddress();
 
 
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
