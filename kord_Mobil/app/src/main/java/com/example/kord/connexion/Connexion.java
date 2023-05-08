@@ -18,12 +18,11 @@ public class Connexion {
 
         } catch (ClassNotFoundException e1) {
             // TODO Auto-generated catch block
-            System.out.println("Erreur du chargement du pilote");
 
             e1.printStackTrace();
         } catch (SQLException e) {
             // TODO Auto-generated catch block
-            System.out.println("Erreur de connecxion");
+
             e.printStackTrace();
         }
     }

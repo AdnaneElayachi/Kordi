@@ -96,7 +96,7 @@ public class UserImpliment implements CRUD<Users> {
 
             }}catch (SQLException e) {
 
-            System.out.println("Probleme de requete"+e.getMessage());
+           
             e.printStackTrace();
         }
         return false;
@@ -129,7 +129,7 @@ public class UserImpliment implements CRUD<Users> {
 
     @Override
     public boolean delete(Users variable) {
-        String req="delete from users where idUsers  =?";
+        String req="delete from users where idUsers  = ?";
         try {
             PreparedStatement ps=Connexion.getCon().prepareStatement(req);
             ps.setLong(1,variable.getId());

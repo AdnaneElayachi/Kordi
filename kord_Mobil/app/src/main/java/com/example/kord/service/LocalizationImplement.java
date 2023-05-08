@@ -91,7 +91,7 @@ public class LocalizationImplement implements CRUD<Localization> {
 
             }}catch (SQLException e) {
 
-            System.out.println("Probleme de requete"+e.getMessage());
+
             e.printStackTrace();
         }
 
@@ -113,7 +113,7 @@ public class LocalizationImplement implements CRUD<Localization> {
 
             }}catch (SQLException e) {
 
-            System.out.println("Probleme de requete"+e.getMessage());
+
             e.printStackTrace();
         }
         return false;

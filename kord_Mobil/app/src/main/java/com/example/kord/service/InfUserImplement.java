@@ -82,7 +82,7 @@ public class InfUserImplement implements CRUD<InformationUser> {
 
             }}catch (SQLException e) {
 
-            System.out.println("Probleme de requete"+e.getMessage());
+
             e.printStackTrace();
         }
 
@@ -107,7 +107,7 @@ public class InfUserImplement implements CRUD<InformationUser> {
 
             }}catch (SQLException e) {
 
-            System.out.println("Probleme de requete"+e.getMessage());
+
             e.printStackTrace();
         }
         return false;

@@ -93,7 +93,6 @@ public class AdressImplent implements CRUD<Address> {
 
             }}catch (SQLException e) {
 
-            System.out.println("Probleme de requete"+e.getMessage());
             e.printStackTrace();
         }
 
