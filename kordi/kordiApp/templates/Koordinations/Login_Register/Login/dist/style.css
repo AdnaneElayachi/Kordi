@@ -90,3 +90,8 @@ body{
   cursor:pointer;
   color:#666;
 }
+.password-field {
+  -webkit-text-security: disc; /* For Safari, Chrome, and other WebKit-based browsers */
+  -moz-text-security: disc; /* For Firefox */
+  input-security: disc; /* For future compatibility */
+}

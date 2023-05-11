@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Login-Page</title>
   <link rel="stylesheet" href="./style.css">
+  <script src="script.js"></script>
 
 </head>
 <body>
@@ -19,11 +20,12 @@
     <div class="box">
       <h1>Login</h1>
       <input type="text" placeholder="Username"/>
-      <input type="text" placeholder="Password"/>
-      <button onclick="window.location.href='HomePage/dist/index.html';">Login</button>
+      <input type="password" placeholder="Password" class="password-field"/>
+      <button onclick="window.location.href='file:kordiApp\templates\Koordinations\Home\dist\index.html';">Login</button> 
+      
       <p>Not a member?
       <span>
-        Go to <a href="">Sign Up</a>
+        Go to <a href="../../Register/dist/index.html">Sign Up</a>
       </span>
     </p>
     </div>

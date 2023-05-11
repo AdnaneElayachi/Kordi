@@ -8,6 +8,10 @@ from django.shortcuts import render, redirect
 import qrcode
 
 
+def homePage(request):
+    return render(request, 'Koordinations/Welcome/dist/index.html')
+
+
 def listUser(request):
     d = Users.objects.all()
 
@@ -57,7 +61,7 @@ def user_login(request):
 
             return render(request, '', {'error': 'Invalid credentials'})
     else:
-        return render(request, '')
+        return render(request, 'Koordinations/Login_Register/Login/dist/index.html')
 
 
 def user_logout(request):
@@ -76,7 +80,7 @@ def register(request):
             return redirect('home')
     else:
         form = UserForm()
-    return render(request, '', {'form': form})
+    return render(request, 'Koordinations/Welcome/dist/index.html', {'form': form})
 
 
 ################################################
@@ -153,10 +157,6 @@ def QR_Code_informationUser(request, pk):
     response = HttpResponse(content_type="image/png")
     img.save(response, "PNG")
     return response
-
-
-
-
 
 
 def liens_informationUser(request, pk):
