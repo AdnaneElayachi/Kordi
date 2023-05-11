@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>QRCODE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="screen">  
+  <div class="screen-image"></div>  
+  <div class="screen-overlay"></div>  
+  <div class="screen-content">
+    <i class="screen-icon fa-brands fa-codepen"></i>
+    <div class="screen-user">
+      <span class="name" data-value="CODEPEN">Koords</span>
+      <script src="https://cdn.jsdelivr.net/npm/qrcodejs2@1.0.0/dist/qrcode.min.js"></script>
+      <style>
+        #qrcode {
+          width: 200px;
+          height: 200px;
+
+        }
+      </style>
+    </head>
+    <body>
+      <div id="qrcode"></div>
+    
+      <script>
+        var qrcode = new QRCode("qrcode", {
+          text: "https://www.google.com/maps/d/embed?mid=1sfmLA34Jvr0N6_ZMbPpU6p7mnfg&source=s_q&hl=en&geocode&ie=UTF8&hq&hnear=Marrakech%20Medina%2C%20Marrakech-Tensift-El%20Haouz%2C%20Morocco&t=h&msa=0&ll=31.626883%2C-7.986149&spn=0.003106%2C0.007499&z=17&output=embed",
+          width: 128,
+          height: 128
+        });
+      </script>
+
+      <img src='../qr.png' />
+    </div>
+  </div>
+</div>
+
+<div id="blob"></div>
+<div id="blur"></div>
+
+<div id="links">
+  <div class="meta-link">  
+    <span class="label">Koordinations</span>
+    <span class="dot">·</span>
+    <a class="source" href="https://github.com/DeathsScyth" target="_blank">
+      <i class="fa-solid fa-link"></i>
+  </div>
+  
+</div>
+<!-- partial -->
+  <script src='https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

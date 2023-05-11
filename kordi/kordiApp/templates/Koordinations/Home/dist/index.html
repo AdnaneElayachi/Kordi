@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Home-Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<header class="header">
+	<div class="header__inner">
+		<div class="logo">
+			Koordinations
+		</div>
+		<nav class="nav">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Make your QR</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<div class="hero">
+	<div class="hero__thumb">
+		<img src="https://images.unsplash.com/photo-1681068420510-cb528c65d595?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80" alt="">
+	</div>
+</div>
+<div class="content flow">
+	<h1>About Us</h1>
+	<p>Welcome to our company, where we provide innovative and efficient solutions for location tracking. Our smart locator is a cutting-edge device that is designed to help you locate any item or person within seconds. With our smart locator, you can say goodbye to the frustration and inconvenience of losing your valuable items or your loved ones.
+
+		<p>Our smart locator works by generating a unique QR code that is linked to our website. Simply scan the QR code with your smartphone, and you will be redirected to our website where you can view the exact location of the item or person you are tracking. Our website is user-friendly and provides real-time updates, so you can have peace of mind knowing exactly where your valuable items or loved ones are at all times.</p>
+		
+		<p>At our company, we are dedicated to providing our customers with the best location tracking solutions available on the market. Our team of experts has years of experience in the field of location tracking and is committed to developing innovative products that meet the evolving needs of our customers.</p>
+		
+		<p>Whether you need to keep track of your children, pets, or valuable possessions, our smart locator is the perfect solution for you. With our advanced technology and user-friendly website, you can always stay connected to the things and people that matter most to you. Thank you for choosing us as your location tracking solution provider, and we look forward to helping you stay connected and informed.	</p>
+	<h2>Make Your QR</h2>
+	<p>Welcome to our location tracking service, where we make it easy for you to stay connected with the things and people that matter most to you. With our smart maps API and advanced technology, you can generate a unique QR code that provides real-time updates on your current location. Here's a step-by-step guide on how to use our service:</p>
+
+		<p>1. Enter your name and email address: To get started, simply enter your name and email address on our website. This will create an account for you and allow you to access our location tracking service.</p>
+		
+		<p>2. Use your current location: Our smart maps API uses your device's GPS technology to locate you in real-time. Simply enable location services on your device, and our system will detect your current location automatically.</p>
+		
+		<p>3. Generate your QR code: Once your location is detected, our system will generate a unique QR code for you. This QR code is linked to our website and will provide real-time updates on your current location.</p>
+		
+		<p>4. Share your QR code: You can share your QR code with anyone you want to share your location with. Simply give them the QR code, and they can scan it with their smartphone to see your current location on our website.</p>
+		
+		<p>Stay connected: With our location tracking service, you can always stay connected with your loved ones or keep track of your valuable possessions. Our system provides real-time updates, so you can have peace of mind knowing exactly where your items or loved ones are at all times.</p>
+		
+		<p>Thank you for choosing our location tracking service, and we look forward to helping you stay connected and informed.</p>
+	
+	</div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=geocodeAddress&callback=initMap" async defer></script>
+	<style>
+		.map {
+			height: 400px;
+			width: 100%;
+		}
+	</style>
+	<div class="contain">
+		<div class="address">
+		</div>
+		<div class="position">
+			<input type="text" id="N_position" placeholder="Nom de votre place" >
+			<input type="text" id="D_position" placeholder="Ville" >
+		</div>
+		<div class="map" id="order_map" class="map"></div>
+		<br>
+		<br>
+		<button class="custom-btn btn-8"><span>Generate Your QR Code</span
+
+	</div>
+</div>
+
+	
+<div>
+	<script>
+		function initMap() {
+			var geocoder = new google.maps.Geocoder();
+			var addressInput = document.getElementById('PU_address');
+			var positionInput = document.getElementById('PU_position');
+			var cityInput = document.getElementById('D_position');
+			var mapDiv = document.getElementById('order_map');
+
+			// Create the map
+			var map = new google.maps.Map(mapDiv, {
+				center: {lat: 0, lng: 0},
+				zoom: 12
+			});
+
+			// Function to geocode the address
+			function geocodeAddress() {
+				var address = addressInput.value;
+				var city = cityInput.value;
+
+				var fullAddress = address + ', ' + city;
+
+				geocoder.geocode({'address': fullAddress}, function(results, status) {
+					if (status === 'OK') {
+						// Update the position input fields
+						positionInput.value = results[0].geometry.location.lat() + ', ' + results[0].geometry.location.lng();
+						
+						// Center the map on the geocoded location
+						map.setCenter(results[0].geometry.location);
+
+						// Place a marker on the map
+						var marker = new google.maps.Marker({
+							map: map,
+							position: results[0].geometry.location
+						});
+					} else {
+						alert('Geocode was not successful for the following reason: ' + status);
+					}
+				});
+			}
+
+			// Attach event listener to the address input field
+			addressInput.addEventListener('input', geocodeAddress);
+			cityInput.addEventListener('input', geocodeAddress);
+		}
+	</script>
+</div>
+</body>
+</html>

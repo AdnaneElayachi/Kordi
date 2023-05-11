@@ -1,0 +1,253 @@
+:root {
+  --color-primary: purple;
+  accent-color: var(--color-primary);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+  height: 100vh;
+  padding-top: var(--_header-h, 4rem);
+}
+
+img {
+  display: block;
+  max-width: 300%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+h1 {
+  -webkit-margin-after: 1rem;
+          margin-block-end: 1rem;
+  font-size: 3rem;
+}
+
+h2 {
+  -webkit-margin-after: 1rem;
+  margin-block-end: 1rem;
+font-size: 3rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.wrapper {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.header {
+  padding: 2rem;
+  position: fixed;
+  inset: 0 0 auto 0;
+  transition: color 0.3s;
+  z-index: 10;
+  color: #fff;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #fff;
+  transform: scaleY(0);
+  transition: transform 0.3s;
+  transform-origin: top center;
+  will-change: transform;
+}
+.header.is-sticky {
+  color: #000;
+}
+.header.is-sticky::before {
+  transform: scaleY(1);
+}
+.header__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.nav ul li a {
+  color: inherit;
+}
+
+.content {
+  padding-block: 2rem;
+  width: min(100% - 2rem, 70ch);
+  margin-inline: auto;
+  line-height: 1.5;
+}
+
+.flow > * + * {
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+}
+
+.hero {
+  position: relative;
+  -webkit-margin-before: calc(var(--_header-h, 4rem) * -1);
+          margin-block-start: calc(var(--_header-h, 4rem) * -1);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+body{
+	background-size: 100%;
+}
+div.contain{
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	margin-top: 5%;
+	padding: 1%;
+  text-align: center;
+	border-radius: .3em;
+	background-color: rgba(255,255,255,.6);
+	box-shadow: 0px 0px 100px rgba(255,255,255,.6)
+}
+div.address,
+div.position{
+  margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+label{
+	font-size: 12px
+}
+input{
+	width: 40%;
+	height: 50px;
+	float: left;
+	padding-left: 2%;
+	margin: 1% 3%;
+	border: none;
+	border-radius: .3em;
+	box-shadow: 0px 0px 3px rgba(200,200,200,.6);
+	background-color: rgba(255,255,255,.3);
+	transition: .5s;
+}
+input:hover{
+	background-color: rgba(255,255,255,.4);
+}
+input:focus{
+	background-color: rgba(255,255,255,.6);
+}
+input:disabled{
+	box-shadow: none;
+	background-color: rgba(255,255,255,.2);
+}
+div.distance input{
+	width: 88%
+}
+div.map{
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
+	height: 350px;
+	transition: .5s;
+}
+
+
+.btn-8 {
+  background-color: #f0ecfc;
+background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-8 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-8:before,
+.btn-8:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #c797eb;
+  /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
+  transition: all 0.3s ease;
+}
+.btn-8:before{
+   height: 0%;
+   width: 2px;
+}
+.btn-8:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-8:hover:before {
+  height: 100%;
+}
+.btn-8:hover:after {
+  width: 100%;
+}
+.btn-8:hover{
+  background: transparent;
+}
+.btn-8 span:hover{
+  color: #c797eb;
+}
+.btn-8 span:before,
+.btn-8 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #c797eb;
+  /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
+  transition: all 0.3s ease;
+}
+.btn-8 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-8 span:after {
+  height: 2px;
+  width: 0%;
+}
+.btn-8 span:hover:before {
+  height: 100%;
+}
+.btn-8 span:hover:after {
+  width: 100%;
+}
+  
+
+
