@@ -80,7 +80,7 @@ def register(request):
             return redirect('home')
     else:
         form = UserForm()
-    return render(request, 'Koordinations/Welcome/dist/index.html', {'form': form})
+    return render(request, 'Koordinations/Login_Register/Register/dist/index.html', {'form': form})
 
 
 ################################################
