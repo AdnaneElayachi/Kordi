@@ -35,6 +35,7 @@ class Localization(models.Model):
         self.address = address_
 
 
+
 class InformationUser(models.Model):
     idUsers = models.ForeignKey(Users, on_delete=models.CASCADE)
     userLocalization = models.ForeignKey(Localization, on_delete=models.CASCADE)

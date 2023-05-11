@@ -155,6 +155,10 @@ def QR_Code_informationUser(request, pk):
     return response
 
 
+
+
+
+
 def liens_informationUser(request, pk):
     information_user = get_object_or_404(Users, pk=pk)
     data = f"{information_user.userLocalization}, {information_user.phoneNumber}, {information_user.other_link}, {information_user.images}"

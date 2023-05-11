@@ -36,6 +36,7 @@ class AdressFrom(forms.ModelForm):
 
 
 #############################
+
 class InformationUserFrom(forms.ModelForm):
     class Meta:
         model = InformationUser
