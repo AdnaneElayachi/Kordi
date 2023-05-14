@@ -82,7 +82,6 @@ def register(request):
         form = UserForm()
     return render(request, 'Koordinations/Login_Register/Register/dist/index.html', {'form': form})
 
-
 ################################################
 def listAddress(request):
     for i in range(10):
