@@ -16,7 +16,7 @@ public class registre_main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registre_activity);
-        SignupLink=findViewById(R.id.SignupLink);
+        SignupLink=findViewById(R.id.sign_up);
         SignupLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Main"
-    android:background="@drawable/bg3">
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#8F000000"/>
+    android:background="@android:color/white"
+   >
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,19 +19,18 @@
 
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="256dp"
-                android:layout_height="50dp"
-                android:fontFamily="@font/abeezee"
-                android:text="Registre"
-                android:textColor="#fff"
-                android:textSize="44sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.651"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="129dp" />
+                android:id="@+id/login_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+
+                android:text="Sing up"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/editEmail"
@@ -42,12 +40,12 @@
                 android:ems="10"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
-                android:textColor="#fff"
+                android:textColor="#020202"
 
-                android:textColorHint="#fff"
+                android:textColorHint="#0E0D0D"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="109dp"
-                tools:layout_editor_absoluteY="231dp" />
+                tools:layout_editor_absoluteX="107dp"
+                tools:layout_editor_absoluteY="137dp" />
 
             <EditText
                 android:id="@+id/editPassword"
@@ -58,14 +56,14 @@
                 android:ems="10"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:textColor="#fff"
-                android:textColorHint="#fff"
+                android:textColor="#0C0C0C"
+                android:textColorHint="#0E0D0D"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.542"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.405"
+                app:layout_constraintVertical_bias="0.24"
                 tools:ignore="MissingConstraints" />
 
             <EditText
@@ -77,30 +75,37 @@
                 android:ems="10"
                 android:hint="Confirm Password"
                 android:inputType="textPassword"
-                android:textColor="#fff"
-                android:textColorHint="#fff"
+                android:textColor="#0E0E0E"
+                android:textColorHint="#050505"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.534"
+                app:layout_constraintVertical_bias="0.367"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="109dp" />
+                tools:layout_editor_absoluteX="107dp" />
+
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="212dp"
                 android:layout_height="45dp"
+                android:background="@drawable/button_bg"
                 android:text="Registre"
-                android:textColor="#fff"
-
-                android:background="#742ECC"
+                android:textColor="#ECE3E3"
 
                 app:layout_constraintEnd_toEndOf="@+id/editPassword"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="490dp" />
+                tools:layout_editor_absoluteY="503dp" />
+
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editTextUser"
+        android:layout_width="364dp"
+        android:layout_height="55dp"
+        android:hint="Id d'utilisateur"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.382"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="74dp" />
+
+    <EditText
+        android:id="@+id/editTextLocalization"
+        android:layout_width="364dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Localisation de l'utilisateur"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="157dp" />
+
+    <EditText
+        android:id="@+id/editTextPhoneNumber"
+        android:layout_width="364dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:hint="Numéro de téléphone"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="243dp" />
+
+    <EditText
+        android:id="@+id/editTextOtherLink"
+        android:layout_width="364dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Lien supplémentaire"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnJoin"
+        android:layout_width="364dp"
+        android:layout_height="55dp"
+        android:layout_margin="16dp"
+        android:text="Rejoindre"
+        android:background="#FF0000"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="433dp" />
+
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="364dp"
+        android:layout_height="55dp"
+        android:text="Soumettre"
+
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="591dp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Saisir les données personnel"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="94dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
