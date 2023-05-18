@@ -54,7 +54,7 @@
         android:layout_height="55dp"
         android:layout_margin="16dp"
         android:text="Rejoindre"
-        android:background="#FF0000"
+
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="15dp"
         tools:layout_editor_absoluteY="433dp" />
